@@ -3,11 +3,12 @@
 
 	<head>
 		<meta charset="utf-8">
+		<link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Chef and Apache CloudStack&#0153;</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="Chef and Apache CloudStack">
+		<meta name="author" content="Jeff Moody">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -15,8 +16,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
-
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+<!--		<link rel="stylesheet" href="css/print/pdf.css">
+-->
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
@@ -42,249 +44,556 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
+				<section id="title" data-background="#000000">
+					<h1>Chef & Apache CloudStack&#0153;</h1>
+					<h3>Cloud Systems automation and configuration management using Chef with <br />Apache CloudStack&#0153; and/or <br />Citrix CloudPlatform&#0153;</h3>
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						<small>Created by <a href="http://fifthecho.com">Jeff Moody</a> / <a href="http://twitter.com/fifthecho">@fifthecho</a></small>
 					</p>
 				</section>
 
-				<section>
-					<h2>Heads Up</h2>
+				<section id="whoami" data-background="#000000">
+					<h2>#> whoami</h2>
+					<h3>Jeff Moody</h3>
 					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
+						<ul>
+							<li>Cloud Engineer at Datapipe</li>
+							<ul>
+								<li>Managed Service Provider based in Jersey City, NJ</li>
+								<li>Managed AWS Services (World's largest AWS reseller)</li>
+								<li>Infrastructure-as-a-Service Platform built using Citrix CloudPlatform (Stratosphere)</li>
+								<li>Managed Services on Stratosphere</li>
+							</ul>
+							<li>Primary author/maintainer of knife-cloudstack-fog, kitchen-cloudstack, CloudStack-PowerShell</li>
+						</ul>
 					</p>
 				</section>
 
-				<section>
-					<h2>Point of View</h2>
+				<section id="disclaimer" data-background="#000000">
+					<h2>Disclaimer</h2>
 					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
+						<ul>
+							<li>My opinions are my own and not necessarily representative of my employer</li>
+							<li>YMMV (Your Milage May Vary)</li>
+							<li>No code is perfect, there may be bugs (please sent pull requests/submit issues if you find them)</li>
+						</ul>
 					</p>
 				</section>
 
-				<section>
-					<h2>Marvelous Unordered List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  For those of you who like that sort of thing.
-						  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
+				<section id="what-is-cloudstack-1" data-background="#000000">
+					<h2>What is Apache CloudStack&#0153;?</h2>				
 					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
+						<img src = "CloudStack.png" width = "200" height = "162" />
+						<ul>
+							<li>Virtualization Orchestration Platform</li>
+							<li>Private, Public, VPC Style Clouds</li>
+							<li>Hypervisor Agnostic
+								<ul>
+									<li>Xen</li>
+									<li>KVM</li>
+									<li>VMware ESXi (with VCenter)</li>
+									<li>LXC</li>
+									<li>Hyper-V</li>
+									<li>Oracle VM (OVM)</li>
+									<li>Bare Metal</li>
+									<li>Docker support in development (announced last week)</li>
+								</ul>
+							</li>
+						</ul>
 					</p>
 				</section>
 
-				<section id="themes">
-					<h2>Themes</h2>
+				<section id="what-is-cloudstack-2" data-background="#000000">
+					<h2>What is Apache CloudStack&#0153;?</h2>				
 					<p>
-						Reveal.js comes with a few themes built in: <br>
-						<a href="?#/themes">Default</a> -
-						<a href="?theme=sky#/themes">Sky</a> -
-						<a href="?theme=beige#/themes">Beige</a> -
-						<a href="?theme=simple#/themes">Simple</a> -
-						<a href="?theme=serif#/themes">Serif</a> -
-						<a href="?theme=night#/themes">Night</a> <br>
-						<a href="?theme=moon#/themes">Moon</a> -
-						<a href="?theme=solarized#/themes">Solarized</a>
-					</p>
-					<p>
-						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-						</small>
-					</p>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the background.
+						<img src = "CloudStack.png" width = "200" height = "162" />
+						<ul>
+							<li>Project founded in 2008</li>
+							<ul>
+								<li>Started by Cloud.com (First OSS release May 2010)</li>
+								<li>Bought by Citrix (July 2011)</li>
+								<li>Donated to ASF (April 2012)</li> 
+								<li>Accepted as an ASF Top-Level Project (March 2013)</li>
+							</ul>
+							<li>Written in Java/Tomcat</li>
+							<li>Robust Native API</li>
+							<ul>
+								<li>Baked-in AWS EC2 Compatibility with SOAP and REST API</li>
+							</ul>
+						</ul>
 					</p>
 				</section>
 
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
+				<section id="cloudplatform" data-background="#000000">
+					<h2>Then what is Citrix CloudPlatform&#0153;?</h2>
 					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<section data-background="#007777">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#007777"</code> on a slide to change the full page background to the given color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Repeated Image Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-				</section>
-
-				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-					<h2>Background Transitions</h2>
-					<p>
-						Pass reveal.js the <code>backgroundTransition: 'slide'</code> config argument to make backgrounds slide rather than fade.
+						<img src = "cloudplatform_logo.gif" />
+						<ul>
+							<li>Commercial release of CloudStack</li>
+							<li>Deeper 3rd-Party Vendor integrations</li>
+							<li>Non-Apache Licence Compatible Libraries/Tools</li>
+							<li>Includes licensing for Citrix XenServer</li>
+						</ul>
 					</p>
 				</section>
 
-				<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
-					<h2>Background Transition Override</h2>
+
+				<section id="cloudstack-and-chef" data-background="#000000">
+					<h2>CloudStack and Chef</h2>
 					<p>
-						You can override background transitions per slide by using <code>data-background-transition="slide"</code>.
+						<ul>
+							<li>Why are there two knife plugins for CloudStack?</li>
+							<li>What makes the two plugins different?</li>
+							<li>What benefits does a knife plugin have over native API + knife bootstrap?</li>
+						</ul>
 					</p>
 				</section>
 
-				<section>
-					<h2>Clever Quotes</h2>
+				<section id="knife-cloudstack" data-background="#000000">
+					<h2>What is knife-cloudstack?</h2>
 					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
+						<ul>
+							<li>Developed initially by Edmunds.</li>
+							<li>Less API coverage than knife-cloudstack-fog</li>
+							<li>Provides "stacks" for building multiple servers at once.</li>
+							<ul>
+								<li>David Nalley of Apache/Citrix looking at making this part of knife, not just knife-cloudstack</li>
+							</ul>
+							<li>Uses its own CloudStack API library.</li>
+						</ul>
 					</p>
 				</section>
 
+				<section id="knife-cloudstack-fog" data-background="#000000">
+					<h2>What, then, is knife-cloudstack-fog?</h2>
+					<p>
+						<ul>
+							<li>Forked from an earlier, pre-Edmunds knife-cloudstack which worked <i>sometimes</i>. </li>
+							<li>Developed initially by me. Several contributors, but still mostly my project.</li>
+							<li>Provides coverage for almost every CloudStack API call needed to manage infrastructure.</li>
+							<li>Uses FOG for its CloudStack API calls.</li>
+						</ul>
+					</p>
+				</section>
+
+				<section id="fog" data-background="#000000">
+					<h2>What is FOG?</h2>
+					<p>
+						<img src="FOG.png" />
+						<ul>
+							<li>Cloud-independent/agnostic toolkit for Ruby</li>
+							<ul>
+								<li>Initial CloudStack support added by Brian Dorry (also of Datapipe)</li>
+							</ul>
+							<li>Uniform-ish access to all Cloud resources (independent of provider) using common-ish language</li>
+							<li>Used by Chef first-party knife plugins</li>
+						</ul>
+					</p>
+				</section>
+
+				<section id="knife" data-background="#000000">
+					<h2>What is knife?</h2>
+					<p>
+						<ul>
+							<li><i>(Hopefully you know this already)</i></li>
+							<li>CLI interface for Chef</li>
+							<ul>
+								<li>Built to be extensible and support plug-ins</li>
+								<li>Many of these plug-ins are for VM provisioning</li>
+								<li>Plugins include support for:</li>
+								<ul>
+									<li>AWS, CloudStack, OpenStack, Google Compute Engine, VMware, XenServer, Docker...</li>
+								</ul>
+							</ul>	
+							<li>Used to interact with Chef server and nodes</li>						
+						</ul>
+					</p>
+				</section>
+
+				<section id="features" data-background="#000000">
+					<h2>What does knife-cloudstack-fog provide?</h2>
+					<p>
+						<ul>
+							<li>One-stop-shop for all information to manage CloudStack instances</li>
+							<code><pre>
+** CLOUDSTACK COMMANDS **
+knife cloudstack diskoffering list
+knife cloudstack keypair create -k NAME (options)
+knife cloudstack keypair delete NAME
+knife cloudstack keypair list
+knife cloudstack network create -n NAME -o NETWORKOFFERINGID -z ZONE (options)
+knife cloudstack network delete ID
+knife cloudstack network list
+knife cloudstack networkoffering list
+knife cloudstack portforwardingrule list
+knife cloudstack publicip create (options)
+knife cloudstack publicip list
+knife cloudstack securitygroup list (options)
+knife cloudstack server create -s SERVICEID -t TEMPLATEID -z ZONEID (options)
+knife cloudstack server delete INSTANCE_ID
+knife cloudstack server destroy INSTANCE_ID
+knife cloudstack server list (options)
+knife cloudstack server start INSTANCE_ID
+knife cloudstack server stop INSTANCE_ID (options)
+knife cloudstack serviceoffering list
+knife cloudstack template list (options)
+knife cloudstack volume list
+knife cloudstack zone list
+
+							</pre></code>
+						</ul>
+					</p>
+				</section>
+
+				<section id="what-do-we-use-this-for" data-background="#000000">
+					<h2>With all these options, what is the main thing we use this plugin for?</h2>
+					<br /><br /><br /><br /><br />
+					<p><h3 class="fragment">Provisioning servers!</h3>
+					</p>
+				</section>
+
+				<section id="knife-cloudstack-server-create" data-background="#000000">
+					<h2>knife cloudstack server create --help</h2>
+					<p><code><pre>
+knife cloudstack server create -s SERVICEID -t TEMPLATEID -z ZONEID (options)
+        --server-url URL             Chef Server URL
+        --chef-zero-port PORT        Port to start chef-zero on
+        --key KEY                    API Client Key
+    -A KEY,                          Your Cloudstack Access Key ID
+        --cloudstack-access-key-id
+        --cloudstack-api-endpoint ENDPOINT
+                                     Your Cloudstack API endpoint
+    -g, --groupids SECURITYGROUPIDS  Comma separated list of CloudStack Security Group IDs.
+    -G SECURITYGROUPNAMES,           Comma separated list of CloudStack Security Group names. 
+    								 Each group name must be encapuslated in quotes if it 
+    								 contains whitespace.
+        --groupnames
+    -w, --networkids NETWORKIDS      Comma separated list of CloudStack network IDs.
+    -K SECRET,                       Your Cloudstack API Secret Access Key
+        --cloudstack-secret-access-key
+    -s, --serviceid SERVICEID        The CloudStack service offering ID.
+    -t, --templateid TEMPLATEID      The CloudStack template ID for the server.
+    -Z, --zoneid ZONE                The CloudStack zone ID for the server.
+        --[no-]color                 Use colored output, defaults to false on Windows, true 
+        							 otherwise
+    -c, --config CONFIG              The configuration file to use
+        --defaults                   Accept default values for all questions
+        --disable-editing            Do not open EDITOR, just accept the data as is
+    -D DISKOFFERINGID,               Specifies either the Disk Offering ID for the 
+    								 ROOT disk for an ISO template, or a DATA disk.
+        --diskoffering
+    -d, --distro DISTRO              Bootstrap a distro using a template; default is 'chef-full'
+    -e, --editor EDITOR              Set the editor to use for interactive commands
+    -E, --environment ENVIRONMENT    Set the Chef environment
+    -F, --format FORMAT              Which format to use for output
+    -H, --hostname NAME              The instance host name
+    -i PRIVATE_KEY_FILE,             The Private key file for authenticating SSH session. 
+    								 --keypair option is also needed.
+        --identity-file
+    -k, --keypair KEYPAIR            The CloudStack Key Pair to use for SSH key authentication.
+    -z, --local-mode                 Point knife commands at local repository instead of server
+    -u, --user USER                  API Client Username
+        --print-after                Show the data after a destructive operation
+        --random-ssh-port            Map a random, unused high-level port to 22 for SSH and 
+        							 creates a port forward for this mapping. For Isolated 
+        							 Networking and VPC only.
+    -r, --run-list RUN_LIST          Comma separated list of roles/recipes to apply
+    -N, --display-name NAME          The instance display name
+        --size SIZE                  Specifies the arbitrary Disk Size for DATADISK volume in GB. 
+        							 Must be passed with custom size Disk Offering ID.
+    -W, --ssh-gateway GATEWAY        The ssh gateway server. Connection is defined as 
+    								 USERNAME@HOST:PORT
+    -P, --ssh-password PASSWORD      The ssh password
+    -p, --ssh-port PORT              The port which SSH should be listening on. 
+    								 If unspecified, will default to 22.
+    -x, --ssh-user USERNAME          The ssh username
+        --template-file TEMPLATE     Full path to location of template to use
+    -V, --verbose                    More verbose output. Use twice for max verbosity
+    -v, --version                    Show chef version
+    -y, --yes                        Say yes to all prompts for confirmation
+    -h, --help                       Show this message
+
+					</pre></code></p>
+				</section>
+
+				<section id="server-creation" data-background="#000000">
+					<h2>With all those options, how do we start?</h2>
+					<p><ol>
+						<li class="fragment">Pick a Zone</li>
+						<li class="fragment">Pick a Template</li>
+						<li class="fragment">Pick a Service Offering</li>
+						<li class="fragment">Pick a Network/Security Group</li>
+						<li class="fragment">Add any additional options</li>
+					</ol></p>
+					<p class="fragment">Then, launch the VM!</p>
+				</section>
+
+				<section id="knife-cloudstack-zone-list" data-background="#000000">
+					<h2>knife cloudstack zone list</h2>
+					<p>No configurable options</p>
+					<p><code><pre>
+knife cloudstack zone list 
+ID                                    Name                                  Network Type                          Security Groups?                    
+3                                     New York Metro EPN                    Advanced                              No                                  
+5                                     New York Metro                        Advanced                              Yes                                 
+6                                     Hong Kong                             Advanced                              Yes                                 
+7                                     Silicon Valley                        Advanced                              Yes                                 
+8                                     Hong Kong EPN                         Advanced                              No                                  
+9                                     London                                Advanced                              Yes                                 
+11                                    Shanghai                              Advanced                              Yes                                 
+12                                    London EPN                            Advanced                              No                                  
+13                                    Silicon Valley EPN                    Advanced                              No                                  
+14                                    Shanghai EPN                          Advanced                              No                                  
+08e8fdf1-f64a-4ab6-bd21-7bffd578be9e  Iceland EPN                           Advanced                              No                                  
+e20be308-482b-4d10-8885-cea306e87de9  Silicon Valley 2                      Advanced                              Yes                                 
+cb765f1b-2638-465e-9c3d-9013e04116da  Silicon Valley 2 EPN                  Advanced                              No                                  
+51345d53-bf3b-4280-b5dd-8541703eff9a  Singapore EPN                         Advanced                              No                                  
+4baf6857-c7db-437a-96e6-f420761e128c  Singapore                             Advanced                              Yes 
+					</pre></code></p>
+				</section>
+
+				<section id="knife-cloudstack-template-list" data-background="#000000">
+					<h2>knife cloudstack template list --help</h2>
+					<p><code><pre>
+knife cloudstack template list (options)
+    -s, --server-url URL             Chef Server URL
+        --chef-zero-port PORT        Port to start chef-zero on
+    -k, --key KEY                    API Client Key
+    -A KEY,                          Your Cloudstack Access Key ID
+        --cloudstack-access-key-id
+        --cloudstack-api-endpoint ENDPOINT
+                                     Your Cloudstack API endpoint
+    -K SECRET,                       Your Cloudstack API Secret Access Key
+        --cloudstack-secret-access-key
+        --[no-]color                 Use colored output, defaults to false on 
+        							 Windows, true otherwise
+    -c, --config CONFIG              The configuration file to use
+        --defaults                   Accept default values for all questions
+    -d, --disable-editing            Do not open EDITOR, just accept the data as is
+    -e, --editor EDITOR              Set the editor to use for interactive commands
+    -E, --environment ENVIRONMENT    Set the Chef environment
+    -L, --filter FILTER              The template search filter. Default is 'featured.' 
+    								 Other options are 'self,' 'self-executable,' 
+    								 'executable,' and 'community.'
+    -F, --format FORMAT              Which format to use for output
+    -H, --hypervisor HYPERVISOR      Limit responses to templates only running on a 
+    								 specific hypervisor. Default provides templates 
+    								 from all hypervisors.
+        --local-mode                 Point knife commands at local repository instead 
+        							 of server
+    -u, --user USER                  API Client Username
+        --print-after                Show the data after a destructive operation
+    -T, --templateid TEMPLATEID      Limit responses to a single template ID. 
+    								 Default provides all templates.
+    -V, --verbose                    More verbose output. Use twice for max verbosity
+    -v, --version                    Show chef version
+    -y, --yes                        Say yes to all prompts for confirmation
+    -Z, --zone ZONE                  Limit responses to templates only located in a 
+    								 specific zone. Default provides templates from all zones.
+    -z, --zoneid ZONEID              Limit responses to templates only running in a 
+    								 specific zone (specified by ID #). Default provides 
+    								 templates from all zones.
+    -h, --help                       Show this message
+
+					</pre></code></p>
+				</section>
+
+				<section id="knife-cloudstack-template-list-example" data-background="#000000">
+					<h2>knife cloudstack template list</h2>
+					<p><code><pre>
+ knife cloudstack template list
+ID                                    Hypervisor  Size (in GB)  Zone Name             Zone ID                               Name                                                            
+086ce1e1-3e92-4a9e-b416-2dd5445c1e7f  VMware      20            Iceland EPN           08e8fdf1-f64a-4ab6-bd21-7bffd578be9e  Datapipe: Oracle Enterprise Linux 5 (64-bit)                    
+1573395c-7489-4a93-9ca3-11a51a285457  VMware      20            Iceland EPN           08e8fdf1-f64a-4ab6-bd21-7bffd578be9e  Datapipe: CentOS 5 (64-bit)                                     
+d16563da-64c6-4358-b6e6-0c313c43223c  VMware      20            Iceland EPN           08e8fdf1-f64a-4ab6-bd21-7bffd578be9e  Datapipe: CentOS 6 (64-bit)                                     
+187dc53e-8f4b-405b-9067-7ee056c75fcc  VMware      20            Iceland EPN           08e8fdf1-f64a-4ab6-bd21-7bffd578be9e  Datapipe: Ubuntu 12.04 (64-bit)                                 
+20e58c82-2b7b-4552-adb2-59d4f28021cd  VMware      40            Iceland EPN           08e8fdf1-f64a-4ab6-bd21-7bffd578be9e  Datapipe: Windows Server 2008 R2 English 64-bit                 
+27b96e7e-7315-48f2-8ac0-4a4aa7cc7e14  VMware      20            Iceland EPN           08e8fdf1-f64a-4ab6-bd21-7bffd578be9e  Datapipe: Scientific 6 (64-bit)                                 
+27fa2e69-ad13-43c2-b000-56cce241f769  VMware      20            Iceland EPN           08e8fdf1-f64a-4ab6-bd21-7bffd578be9e  Datapipe: Red Hat Enterprise Linux 6 (64-bit)                   
+88c62685-b6f5-4acc-9ca4-9b937e5112b5  XenServer   20            Iceland EPN           08e8fdf1-f64a-4ab6-bd21-7bffd578be9e  Datapipe: CentOS 5-64Bit-xen                                    
+0f755a47-92bf-4bbf-beb0-bb3fc2ae6c91  VMware      20            Iceland EPN           08e8fdf1-f64a-4ab6-bd21-7bffd578be9e  Datapipe: Red Hat Enterprise Linux 5 (64-bit)                   
+a494ea35-e64f-40d4-a30c-b5c9dc1971bd  VMware      20            Iceland EPN           08e8fdf1-f64a-4ab6-bd21-7bffd578be9e  Datapipe: FreeBSD 9.2 (64-bit)                
+...
+					</pre></code></p>
+				</section>
+
+				<section id="knife-cloudstack-serviceoffering-list" data-background="#000000">
+					<h2>knife cloudstack serviceoffering list</h2>
+					<p>No configurable options</p>
+					<p><code><pre>
+knife cloudstack serviceoffering list
+ID                                    Name            Description                                               Number of CPUs  CPU Speed  Memory (in MB)  Network Speed
+f26eb96f-98d5-4f34-81b0-d817c81227a2  kilo-1-40-hpc   1 CPU core, 4G memory, high performance root volume       1               2400       4096            1000         
+2b9a7b24-c977-467e-b0c8-eb0c97512f22  nano-h-5-hpc    0.5 CPU core, 512MB memory, high performance root volume  1               1200       512             1000         
+9d865b43-296e-4ea6-83a2-122bc9baf6ac  nano-h-10-hpc   0.5 CPU core, 1G memory, high performance root volume     1               1200       1024            1000         
+39                                    mega-2-160      2 CPU core, 16G memory, standard root volume              2               2400       16384           1000         
+29ef5f70-8346-472a-9f84-f00a1fd727a7  kilo-4-80-hpc   4 CPU core, 8G memory, high performance root volume       4               2400       8192            1000         
+38                                    mega-4-160      4 CPU core, 16G memory, standard root volume              4               2400       16384           1000         
+4414bc19-7ee8-443f-80cc-0b19ff274ad9  nano-1-10-hpc   1 CPU core, 1G memory, high performance root volume       1               2400       1024            1000         
+37                                    mega-8-160      8 CPU core, 16G memory, standard root volume              8               2400       16384           1000         
+10f888d6-f6aa-4ebb-8f40-9acc5c4f0fa4  kilo-1-20-hpc   1 CPU core, 2G memory, high performance root volume       1               2400       2048            1000  
+...
+					</pre></code></p>
+				</section>
+
+				<section id="knife-cloudstack-network-list" data-background="#000000">
+					<h2>knife cloudstack network list</h2>
+					<p>Used for Advanced Isolated or Advanced VPC Zones</p>
+					<p><code><pre>
+knife cloudstack network list
+ID                                    Name                                  Zone ID                               VLAN                                  State                               
+1a036de9-dd01-4f9a-af80-f5deac2d6131  Demo1                                 3                                                                           allocated                           
+4cbc9ef7-d276-4858-beb0-ce6643a247b8  TestingNetwork                        3                                                                           allocated                           
+91b06fd1-bf74-4d02-a28a-0d9aca3d5fd5  SiliconValleyEPNTest                  13                                                                          allocated                           
+623                                   Default Network                       12                                                                          implemented                         
+535                                   Default Network                       3                                                                           implemented                         
+3d4af98c-7787-417a-8e26-8f265129e7c3  defaultGuestNetwork                   4baf6857-c7db-437a-96e6-f420761e128c                                        setup                               
+1124                                  Shared SG enabled network             5                                                                           setup           	
+...
+					</pre></code></p>
+				</section>
+
+				<section id="knife-cloudstack-securitygroup-list" data-background="#000000">
+					<h2>knife cloudstack securitygroup list</h2>
+					<p>Used for Basic or Advanced with Security Groups Zones</p>
+					<p><code><pre>
+knife cloudstack securitygroup list
+ID                                    Name                                  Description                         
+129                                   default                               Default Security Group              
+295                                   Network Testing                                                           
+320                                   Chef Server                                                               
+324                                   TestSG                                                                    
+432                                   Puppet Server                                                 
+f2bf049f-8c6b-4b8f-87d1-4846da688dbf  AppTesting                                                 
+...
+					</pre></code></p>
+				</section>
+
+				<section id="knife-cloudstack-server-create-full" data-background="#000000">
+					<h2>knife cloudstack server create</h2>
+					<p>
+						<code>
+						<pre>
+knife cloudstack server create -Z 4baf6857-c7db-437a-96e6-f420761e128c -t b5870d22-e586-4da9-add5-100dc1c18a9f -s 4122c0ae-85a4-4696-938a-80df3a6b6508 -g 4c4219b7-1d55-4e6e-84e8-5d1435198df7,f2bf049f-8c6b-4b8f-87d1-4846da688dbf -k Test_key
+
+Waiting for server....
+
+
+
+Name: 0bdb2cd0-d991-4d3c-8c4e-809597dfaf05
+Primary IP: 64.106.186.210
+Username: root
+Password: jA2rszsie
+Waiting for SSH.
+
+						</pre>
+						</code>
+					</p>
+				</section>
+
+				<section id="other-options" data-background="#000000">
+					<p><h3>Other information is available from<br /> knife-cloudstack-fog for:</h3>
+						<ul>
+							<li>disk offerings</li>
+							<ul>
+								<li>Creating data-disks with instances</li>
+								<li>Creating VMs from ISO templates for the ROOT disk</li>
+							</ul>
+							<li>keypairs</li>
+							<ul>
+								<li>Assumes that the cloud-set-guest-sshkey is in place.</li>
+								<li>Supports creation of and deletion of keypairs (end user feature request)</li>
+							</ul>
+							<li>networks</li>
+							<ul>
+								<li>Supports creation and deletion of networks (for Advanced Zones)</li>
+							</ul>
+							<li>portforwardingrules</li>
+							<ul>
+								<li>For Advanced Zone networks, NAT rules can be created with knife</li>
+							</ul>
+							<li>Server stop/start</li>
+							<li>SSH Gateway</li>
+							<li>Random port forwarding (for Advanced Zones)</li>
+						</ul>
+					</p>
+				</section>
+
+				<section id="future" data-background="#000000">
+					<h2>Future</h2>
+					<p>
+						<ul>
+							<li class="fragment">Move code to knife-cloud?</li>
+							<ul class="fragment">
+								<li>One plugin for all Clouds</li>
+								<li>Common semantics</li>
+								<li> <b>LOTS</b> of work to do</li>
+							</ul>
+							<li class="fragment">Merge with knife-cloudstack?</li>
+							<ul class="fragment">
+								<li>Unlikely as some core knife-cloudstack devs are anti-FOG</li>
+								<li>knife-cloudstack-fog more feature rich, minus stacks and system VMs</li>
+							</ul>
+							<li class="fragment">Tests</li>
+							<ul class="fragment">
+								<li>There currently are no tests.</li>
+								<li>I don't know how to write tests (as of March 2014)</li>
+								<li>If someone wants to start writing tests, please do!</li>
+							</ul>
+						</ul>
+					</p>
+				</section>
+
+				<section id="bonus" data-background="#000000">
+					<h2>Bonus content!</h2>
+					<p class="fragment">There is a Test Kitchen driver for CloudStack/CloudPlatform! (...and I wrote it!) <br />
+						The setup for the driver is on the GitHub page <br /> (https://github.com/test-kitchen/kitchen-cloudstack) </p> <br /> <br /> <br />
+						<p class="fragment">There's also a Vagrant driver for CloudStack/CloudPlatform (...and I didn't write it!)
+					</p>
+				</section>
+
+				<section id="how-to-try" data-background="#000000">
+					<h2>So, how do I get in on this?</h2>
+						<ul class="fragment">
+							<li class="fragment">Datapipe Stratosphere</li>
+							<ul class="fragment">
+								<li>Global IaaS Platform running on Citrix CloudPlatform</li>
+								<li><a href="http://www.datapipe.com/cloud/stratosphere/">http://www.datapipe.com/cloud/stratosphere/</a></li>
+							</ul class="fragment">
+							<li class="fragment">Install Apache CloudStack&#0153;</li>
+							<ul class="fragment">
+								<li>Available from YUM and apt repositories for EL-6 and Ubuntu 12.04</li>
+								<li><a href="http://cloudstack.apache.org/">http://cloudstack.apache.org/</a></li>
+							</ul>
+							<li class="fragment">I've built a Docker build script for CloudStack!</li>
+							<ul class="fragment">
+								<li>Still under heavy work.</li>
+								<li>Definitely not recommended for production.</li>
+								<li><a href="https://github.com/fifthecho/docker-cloudstack-management">https://github.com/fifthecho/docker-cloudstack-management</a></li>
+								<li>(Currently coordinating with CloudStack peoples on how we want this in the Docker Index)</li>
+							</ul>
+						</ul>
+				</section>
+
+				<section id="questions" data-background="#000000">
+					<h2>Questions?</h2>
+					<p><h3>Jeff Moody</h3>
+						<ul>
+						<li>Datapipe (http://www.datapipe.com)</li>
+						<li>E-Mail: jmoody@datapipe.com / fifthecho@gmail.com </li>
+						<li>GitHub: https://github.com/fifthecho</li>
+						<li>Twitter: @fifthecho</li>
+						<li>YouTube: https://www.youtube.com/user/fifthecho</li>
+					</ul></p>
+				</section>
+
+				<section id="thanks" data-background="#000000">
+					<h1>Thank you!</h1>
+					<h2>Also many thanks to the Chef community, FOG developers, my contributors, and people who submit issues.</h2>
+					<hr />
+					<h2>Speaker Office Hours: Today 3:15-3:55 in Marina</h2>
+				</section>
+<!--
 				<section>
 					<section id="fragments">
 						<h2>Fragmented Views</h2>
@@ -352,7 +661,7 @@ function linkify( selector ) {
 					<h1>THE END</h1>
 					<h3>BY Hakim El Hattab / hakim.se</h3>
 				</section>
-
+-->
 			</div>
 
 		</div>
@@ -371,7 +680,7 @@ function linkify( selector ) {
 				center: true,
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+				transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
 
 				// Parallax scrolling
 				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
